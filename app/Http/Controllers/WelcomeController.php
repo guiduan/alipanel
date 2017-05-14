@@ -41,7 +41,7 @@ class WelcomeController extends Controller
         $request = new Ecs\RenewInstanceRequest();
         $request->setMethod("GET");
         $request->setInstanceId("i-t4n6nhmb5r19qqreorla");
-        $request->setPeriod('a');
+        //$request->setPeriod('a');
 
         $response = $client->getAcsResponse($request);
 
