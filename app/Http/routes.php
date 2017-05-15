@@ -31,6 +31,8 @@ Route::get('/user/bindinstance', ['middleware'=>'check.user','uses'=>'UserContro
 Route::post('/user/bindinstance', ['middleware'=>'check.user','uses'=>'UserController@bindInstance']);
 Route::get('/user/logout', 'UserController@logout');
 
+Route::get('/password/reset', 'PasswordController@reset');
+
 Route::get('/reg', 'AuthController@registerHandle');
 Route::get('user/bind', 'UserController@bindInstance');
 Route::get('user/list', 'UserController@listInstance');

@@ -1,7 +1,7 @@
-@extends('auth.authmaster')
+@extends('auth.master')
 @section('title','用户登入')
-@section('keyword','SS,Shadowsocks,加速器')
-@section('description','FastSSR -- 专业的SS服务提供商')
+@section('keyword','aliyun,ECS,控制面板')
+@section('description','一个简单的 Aliyun ECS 控制面板')
 @section('content')
 <div class="container aside-xxl">
     <a class="navbar-brand block" href="/">{{env('APP_NAME')}}</a>

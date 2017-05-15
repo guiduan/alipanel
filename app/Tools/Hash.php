@@ -6,7 +6,7 @@
  * Date: 2017/5/10
  * Time: 16:47
  */
-namespace app\Tools;
+namespace App\Tools;
 class Hash
 {
     public static function passwordHash($str)

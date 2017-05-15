@@ -6,7 +6,7 @@
  * Time: 14:28
  */
 
-namespace app\Tools;
+namespace App\Tools;
 
 
 class Captcha
