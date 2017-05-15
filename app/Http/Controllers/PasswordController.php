@@ -59,9 +59,7 @@ class PasswordController extends Controller
             return response()->json($ret);
         }
 
-        $host = $_SERVER['HTTP_HOST'];
-        $xieyi = ($_SERVER['HTTPS'] === 1 || $_SERVER['HTTPS'] === 'on' || $_SERVER['SERVER_PORT'] == 443) ? 'https' : 'http';
-        $resetUrl = $xieyi . '://' . $host . "/password/token/" . $token;
+        $resetUrl = $request->getSchemeAndHttpHost() . "/password/token/" . $token;
 
         $subject = env('APP_NAME') . '密码重置';
         $content = '您的找回密码链接为：' . $resetUrl;
@@ -80,11 +78,34 @@ class PasswordController extends Controller
         return response()->json($ret);
     }
 
+    public function token(Request $request, $token)
+    {
+        //$token = $request->input('token', '');
+        if ($token == '') {
+            $ret['code'] = 0;
+            $ret['status'] = false;
+            $ret['msg'] = "token不能为空";
+            return response()->json($ret);
+        }
+        return view('password.token', ['token' => $token]);
+    }
+
     public function tokenHandle(Request $request)
     {
         $token = $request->input('token', '');
+        $captcha = $request->input('captcha', '');
+        $captcha = strtolower($captcha);
+        $captcha_session = $request->session()->get('captcha', '');
         $password = $request->input('password', '');
         $password_confired = $request->input('password_confirmed', '');
+
+        if ('' == $captcha || $captcha != $captcha_session) {
+            $ret['code'] = 0;
+            $ret['status'] = false;
+            $ret['msg'] = "验证码不正确";
+            return response()->json($ret);
+        }
+
         if ($password != $password_confired) {
             $ret['code'] = 0;
             $ret['status'] = false;
@@ -120,6 +141,7 @@ class PasswordController extends Controller
             $ret['msg'] = '重置失败,请重试';
             return response()->json($ret);
         }
+
         $ret['code'] = 1;
         $ret['status'] = true;
         $ret['msg'] = '重置成功';

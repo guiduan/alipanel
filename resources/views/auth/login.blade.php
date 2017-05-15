@@ -112,7 +112,7 @@
                 if (data == null) {
                     $("#msg-error").show();
                     $("#msg-error-p").html('服务端错误');
-                    document.getElementById("captcha").src = '/captcha?r=' + Math.random();
+                    document.getElementById("captcha_f").src = '/captcha?r=' + Math.random();
                     document.getElementById("login").disabled = false;
                     return;
                 }

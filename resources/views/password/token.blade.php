@@ -12,10 +12,16 @@
 
             <div class="panel-body wrapper-lg">
                 <form>
+                    <input id="token" name="Token" type="hidden" value="{{$token}}">
                     <div class="form-group">
-                        <label class="control-label">Email</label>
-                        <input id="email" name="Email" placeholder="输入您的邮箱根据提示操作." class="form-control input-lg"
-                               type="text">
+                        <label class="control-label">Password</label>
+                        <input id="password" name="Password" placeholder="输入您的密码." class="form-control input-lg"
+                               type="password">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Password</label>
+                        <input id="password_confirmed" name="Password_confirmed" placeholder="再次输入您的密码." class="form-control input-lg"
+                               type="password">
                     </div>
 
                     <div class="form-group">
@@ -65,27 +71,28 @@
         $("#header").remove();
         $("#content").addClass("m-t-lg wrapper-md animated fadeInUp");
     </script>
-
     <script>
         $(document).ready(function () {
             function reset() {
                 $.ajax({
                     type: "POST",
-                    url: "/password/reset",
+                    url: "/password/token",
                     dataType: "json",
                     data: {
-                        email: $("#email").val(),
+                        token: $("#token").val(),
+                        password: $("#password").val(),
+                        password_confirmed:$("#password_confirmed").val(),
                         captcha: $("#captcha").val(),
                         _token: '{{csrf_token()}}',
                     },
                     success: function (data) {
                         if (data.code == 1) {
-                            $("#reset").text("发送成功");
+                            $("#reset").text("重置成功");
                             document.getElementById("reset").disabled = true;
                             $("#msg-error").hide(100);
                             $("#msg-success").show(100);
                             $("#msg-success-p").html(data.msg);
-                            // window.setTimeout("location.href='/auth/login'", 2000);
+                            window.setTimeout("location.href='/auth/login'", 2000);
                         } else {
                             $("#reset").text("重置密码");
                             document.getElementById("captcha_f").src = '/captcha?r=' + Math.random();
@@ -103,13 +110,13 @@
 
             $("html").keydown(function (event) {
                 if (event.keyCode == 13) {
-                    $("#reset").text("正在发送...");
+                    $("#reset").text("正在重置...");
                     document.getElementById("reset").disabled = true;
                     reset();
                 }
             });
             $("#reset").click(function () {
-                $("#reset").text("正在发送...");
+                $("#reset").text("正在重置...");
                 document.getElementById("reset").disabled = true;
                 reset();
             });

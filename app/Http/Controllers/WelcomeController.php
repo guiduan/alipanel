@@ -3,7 +3,7 @@ namespace App\Http\Controllers;
 
 use Ecs\Request\V20140526 as Ecs;
 use Illuminate\Support\Facades\Response;
-use App\Tools\Mail;
+use Illuminate\Http\Request;
 
 
 class WelcomeController extends Controller
@@ -35,10 +35,9 @@ class WelcomeController extends Controller
      *
      * @return Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        var_dump(Mail::send('254732500@qq.com', 'test', ''));
-
+        echo $request->getSchemeAndHttpHost();
     }
 
 }
