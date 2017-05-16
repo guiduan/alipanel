@@ -29,6 +29,7 @@
                         </div>
                     </section>
                 </div>
+            </div>
 
 
         </section>
@@ -48,7 +49,7 @@
                     dataType: "json",
                     data: {
                         instanceid: $("#instanceid").val(),
-                        _token:'{{csrf_token()}}'
+                        _token: '{{csrf_token()}}'
                     },
                     success: function (data) {
                         if (data.code) {
