@@ -49,4 +49,8 @@
 
 ### License
 
-The Alipanel is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+>使用 Aliyun Panel 构建，或者基于 Aliyun Panel 源代码修改的站点 必须 在页脚加上 Powered by Aliyun Panel 字样，并且必须链接到 http://panel.31sky.net 上。必须 在页面的每一个标题上加上 Powered by Aliyun Panel 字样。
+
+在遵守以上规则的情况下，你可以享受等同于 MIT 协议的授权。
+
+或者你可以联系 webmaster@31sky.net 购买商业授权，商业授权允许移除页脚和标题的 Powered by Aliyun Panel 字样。
