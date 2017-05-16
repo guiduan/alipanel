@@ -2,26 +2,27 @@
 
 use Closure;
 
-class CheckUserLogin {
+class CheckUserLogin
+{
 
-	/**
-	 * Handle an incoming request.
-	 *
-	 * @param  \Illuminate\Http\Request  $request
-	 * @param  \Closure  $next
-	 * @return mixed
-	 */
-	public function handle($request, Closure $next)
-	{
+    /**
+     * Handle an incoming request.
+     *
+     * @param  \Illuminate\Http\Request $request
+     * @param  \Closure $next
+     * @return mixed
+     */
+    public function handle($request, Closure $next)
+    {
         if (!$request->session()->has('user')) {
             if ($request->ajax()) {
                 return response('Unauthorized!', 401);
-            }else {
-                $return_url = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+            } else {
+                $return_url = $request->getUri();
                 return redirect('/auth/login?return_url=' . urlencode($return_url));
             }
         }
         return $next($request);
-	}
+    }
 
 }
