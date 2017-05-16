@@ -1,23 +1,52 @@
-## Laravel PHP Framework
+## 如何使用
+1、安装composer
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/downloads.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+    curl -sS https://getcomposer.org/installer | php
+    mv composer.phar /usr/local/bin/composer
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+2、拉取代码
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+    git clone https://github.com/guiduan/alipanel.git
 
-## Official Documentation
+3、安装依赖
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+    cd alipanel
+    composer install
 
-## Contributing
+4、修改目录权限
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+    chmod 777 -R storage 
+    chmod 777 -R vendor
+
+5、修改.env配置文件(根据实际情况修改)
+
+    mv .env.example .env
+    vim .env
+
+6、迁移数据
+
+    php artisan migrate
+
+7、生产key
+
+    php artisan key:gen
+    
+8、优化
+
+    php artisan config:cache
+    php artisan route:cache
+    php artisan optimize
+
+## Nginx的优雅链接配置
+    location / {
+    try_files $uri $uri/ /index.php?$query_string;
+    }
+
+## Demo
+
+[Alipanel Demo](http://laravel.com/docs).
+
 
 ### License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+The Alipanel is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
