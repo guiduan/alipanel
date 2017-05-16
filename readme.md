@@ -44,7 +44,7 @@
 
 ## Demo
 
-[Alipanel Demo](http://laravel.com/docs).
+[Alipanel Demo](http://panel.31sky.net).
 
 
 ### License

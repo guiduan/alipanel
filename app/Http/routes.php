@@ -35,7 +35,3 @@ Route::get('/password/reset', 'PasswordController@reset');
 Route::post('/password/reset', 'PasswordController@resetHandle');
 Route::get('/password/token/{token}', 'PasswordController@token');
 Route::post('/password/token', 'PasswordController@tokenHandle');
-
-Route::get('/reg', 'AuthController@registerHandle');
-Route::get('user/bind', 'UserController@bindInstance');
-Route::get('user/list', 'UserController@listInstance');

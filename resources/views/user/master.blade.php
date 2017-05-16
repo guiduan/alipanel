@@ -46,17 +46,14 @@
                 <ul class="dropdown-menu animated fadeInRight">
                     <span class="arrow top"></span>
                     <li>
-                        <a href="/user/shop">套餐购买</a>
+                        <a href="/user">用户概况</a>
                     </li>
                     <li>
-                        <a href="/user/code">账户充值</a>
+                        <a href="/user/instance">实例列表</a>
                     </li>
                     <li>
-                        <a href="/user/profile">个人资料
+                        <a href="/user/bindinstance">绑定实例
                         </a>
-                    </li>
-                    <li>
-                        <a href="/user/edit">修改资料</a>
                     </li>
                     <li class="divider"></li>
                     <li>
@@ -82,9 +79,7 @@
                                     <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu text-left">
-                                    <li><a href="/help">使用教程</a></li>
-                                    <li><a href="/services">客户端下载</a></li>
-
+                                    <li><a href="#">QQ在线</a></li>
                                 </ul>
                             </div>
                         </div>
