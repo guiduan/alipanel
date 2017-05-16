@@ -40,6 +40,8 @@
     <script>
         $(document).ready(function () {
             $("#bind").click(function () {
+                $("#bind").text("正在绑定...");
+                document.getElementById("bind").disabled = true;
                 $.ajax({
                     type: "POST",
                     url: "/user/bindinstance",
@@ -58,9 +60,13 @@
                             $('#waModal').modal('show');
                             $('#waModal .modal-title').text('提示信息');
                             $('#waModal .modal-body').html(data.msg);
+                            $("#bind").text("绑定");
+                            document.getElementById("bind").disabled = false;
                         }
                     },
                     error: function (jqXHR) {
+                        $("#bind").text("绑定");
+                        document.getElementById("bind").disabled = false;
                         console.log(jqXHR.status);
                     }
                 })
