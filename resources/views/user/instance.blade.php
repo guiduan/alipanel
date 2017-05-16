@@ -35,58 +35,65 @@
             <div class="row">
                 <div class="col-md-12">
                     <section class="panel panel-default">
-                        <table class="table table-hover">
-                            <thead>
-                            <tr>
-                                <th>实例ID</th>
-                                <th>区域</th>
-                                <th>外网IP</th>
-                                <th>内网IP</th>
-                                <th>创建日期</th>
-                                <th>到期日期</th>
-                                <th>实例状态</th>
-                                <th>带宽</th>
-                                <th>操作</th>
-                            </tr>
-                            </thead>
-                            <tbody id="info">
-                            @foreach($instances as $instance)
-                                <tr id="{{$instance['InstanceId']}}">
-                                    <td class="name">{{$instance['InstanceId']}}</td>
-                                    <td class="zoneid">{{$instance['ZoneId']}}</td>
-                                    <td class="paddr">{{$instance['PublicIpAddress']->IpAddress[0]}}</td>
-                                    <td class="iaddr">{{$instance['VpcAttributes']->PrivateIpAddress->IpAddress[0]}}</td>
-                                    <td class="ctime">{{$instance['CreationTime']}}</td>
-                                    <td class="etime"><font color="@if($instance['ExpiredTime'] < date('Y-m-d\TH:i\Z') )red @endif">{{$instance['ExpiredTime']}}</font></td>
-                                    <td class="status">{{$instance['Status']}}</td>
-                                    <td class="maxb">{{$instance['InternetMaxBandwidthOut']}} M</td>
-                                    <td>
-                                        <div class='btn-group btn-group-sm'>
-                                            <button type='button' class='btn btn-primary dropdown-toggle'
-                                                    data-toggle='dropdown'>操作<span class='caret'></span></button>
-                                            <ul class='dropdown-menu' role='menu'>
-                                                <li>
-                                                    <a href='javascript:showContent("开机/关机/重启","/user/showstart?instanceid={{$instance['InstanceId']}}");'>开机/关机/重启</a>
-                                                </li>
-                                                <li class='divider'></li>
-                                                <li>
-                                                    <a href='javascript:showContent("实例详情","/user/showinstancedetail?instanceid={{$instance['InstanceId']}}");'>实例详情</a>
-                                                </li>
-                                                <li class='divider'></li>
-                                                <li>
-                                                    <a href='javascript:showContent("重置密码","/user/showchangepwd?instanceid={{$instance['InstanceId']}}");'>重置密码</a>
-                                                </li>
-                                                <li>
-                                                    <a href='javascript:showContent("重装系统","/user/showreinstall?instanceid={{$instance['InstanceId']}}");'>重装系统</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </td>
+                        <div class="box box-solid">
+                            <div class="box-body table-responsive no-padding">
+                                <table class="table table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>实例ID</th>
+                                        <th>区域</th>
+                                        <th>外网IP</th>
+                                        <th>内网IP</th>
+                                        <th>创建日期</th>
+                                        <th>到期日期</th>
+                                        <th>实例状态</th>
+                                        <th>带宽</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="info">
+                                    @foreach($instances as $instance)
+                                        <tr id="{{$instance['InstanceId']}}">
+                                            <td class="name">{{$instance['InstanceId']}}</td>
+                                            <td class="zoneid">{{$instance['ZoneId']}}</td>
+                                            <td class="paddr">{{$instance['PublicIpAddress']->IpAddress[0]}}</td>
+                                            <td class="iaddr">{{$instance['VpcAttributes']->PrivateIpAddress->IpAddress[0]}}</td>
+                                            <td class="ctime">{{$instance['CreationTime']}}</td>
+                                            <td class="etime"><font
+                                                        color="@if($instance['ExpiredTime'] < date('Y-m-d\TH:i\Z') )red @endif">{{$instance['ExpiredTime']}}</font>
+                                            </td>
+                                            <td class="status">{{$instance['Status']}}</td>
+                                            <td class="maxb">{{$instance['InternetMaxBandwidthOut']}} M</td>
+                                            <td>
+                                                <div class='btn-group btn-group-sm'>
+                                                    <button type='button' class='btn btn-primary dropdown-toggle'
+                                                            data-toggle='dropdown'>操作<span class='caret'></span>
+                                                    </button>
+                                                    <ul class='dropdown-menu' role='menu'>
+                                                        <li>
+                                                            <a href='javascript:showContent("开机/关机/重启","/user/showstart?instanceid={{$instance['InstanceId']}}");'>开机/关机/重启</a>
+                                                        </li>
+                                                        <li class='divider'></li>
+                                                        <li>
+                                                            <a href='javascript:showContent("实例详情","/user/showinstancedetail?instanceid={{$instance['InstanceId']}}");'>实例详情</a>
+                                                        </li>
+                                                        <li class='divider'></li>
+                                                        <li>
+                                                            <a href='javascript:showContent("重置密码","/user/showchangepwd?instanceid={{$instance['InstanceId']}}");'>重置密码</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href='javascript:showContent("重装系统","/user/showreinstall?instanceid={{$instance['InstanceId']}}");'>重装系统</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
 
-                                </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
+                                        </tr>
+                                    @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </section>
                 </div>
             </div>
