@@ -19,7 +19,6 @@ class CreatePasswordsTable extends Migration
             $table->integer('init_time');
             $table->integer('expire_time');
             $table->string('token');
-            $table->timestamps();
         });
     }
 
