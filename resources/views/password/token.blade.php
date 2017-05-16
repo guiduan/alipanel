@@ -60,7 +60,7 @@
 @section('footer')
     <div class="text-center padder">
         <p>
-            <small>使用本站服务请遵守当地法律<br>© <a href="/">{{env('APP_NAME')}}</a></small>
+            <small>使用本站服务请遵守当地法律<br>Powered by <a href="http://panel.31sky.net">Aliyun Panel</a>|<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=48ab85755a2e4cb3f1b09e0fa980fd0cd2df73af2ef328cc53d3406af6d04a8c"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="阿里云国际代购" title="阿里云国际代购"></a></small>
         </p>
     </div>
 @endsection
