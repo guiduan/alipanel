@@ -2,7 +2,7 @@
 <html class="app" lang="en">
 <head>
     <meta charset="utf-8">
-    <title>@yield('title') -- 用户中心 -- {{$APP_NAME}}</title>
+    <title>@yield('title') -- 用户中心 -- {{$APP_NAME}} -- Powered by Aliyun Panel</title>
     <meta name="keywords" content="{{$KEY_WORDS}}">
     <meta name="description" content="{{$DESCRIPTION}}">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
