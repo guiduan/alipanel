@@ -12,9 +12,11 @@ class CreateInstancesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('instances', function(Blueprint $table)
+		Schema::create('instance', function(Blueprint $table)
 		{
 			$table->increments('id');
+			$table->integer('uid');
+			$table->string('instanceid');
 			$table->timestamps();
 		});
 	}
@@ -26,7 +28,7 @@ class CreateInstancesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('instances');
+		Schema::drop('instance');
 	}
 
 }

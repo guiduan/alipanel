@@ -12,9 +12,12 @@ class CreateLoginlogsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('loginlogs', function(Blueprint $table)
+		Schema::create('loginlog', function(Blueprint $table)
 		{
 			$table->increments('id');
+			$table->integer('uid');
+			$table->string('ip');
+			$table->integer('type');
 			$table->timestamps();
 		});
 	}
@@ -26,7 +29,7 @@ class CreateLoginlogsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('loginlogs');
+		Schema::drop('loginlog');
 	}
 
 }

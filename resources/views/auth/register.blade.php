@@ -40,11 +40,6 @@
                          onclick="this.src = '/captcha?r=' + Math.random();"
                          style="border-radius: 2px;cursor: pointer;position: vertical-align:middle;float: right;margin-top: -46px">
                 </div>
-                <div class="checkbox">
-                    <label>
-                        <p>注册即代表同意<a href="/tos">服务条款</a>，以及保证所录入信息的真实性，如有不实信息会导致账号被删除。</p>
-                    </label>
-                </div>
                 <button id="reg" type="submit" class="btn btn-primary" onclick="onRegisterClick();">确认注册</button>
                 <div class="line line-dashed"></div>
 
