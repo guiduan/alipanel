@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="/theme/default/css/animate.css" type="text/css">
     <link rel="stylesheet" href="/theme/default/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="/theme/default/css/font.css" type="text/css">
-    <link rel="stylesheet" href="/theme/default/css/landing.css" type="text/css">
     <link rel="stylesheet" href="/theme/default/css/app.css" type="text/css">
     <link rel="shortcut icon" href="/theme/default/images/favicon.ico">
 
@@ -21,7 +20,6 @@
     <![endif]-->
 </head>
 <body>
-
 <!-- header -->
 <header id="header" class="navbar navbar-fixed-top bg-white box-shadow b-b b-light affix-top" data-spy="affix"
         data-offset-top="1">
